@@ -1,0 +1,46 @@
+#beginBanner {
+  color: white;
+  background-image: url("../../assets/images/bannerProfile.gif");
+  background-repeat: no-repeat;
+  background-position: 80% 50%;
+  background-size: cover;
+  padding-bottom: 18px;
+}
+
+#beginBannerText {
+  padding-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#tableContainer {
+  max-width: 900px;
+  width: 90vw;
+}
+
+#wrapper {
+  margin: 0px 5vw 0px 5vw;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  #wrapper {
+    margin-left: 16vw
+  }
+}
+
+
+
+.cardContainer {
+  max-width: 1100px;
+  width: 90vw;
+  /* width: 60vw; */
+}
+
+#melodyTable{
+  max-width: 1000px;
+  width: 80vw;
+}
+
+#deleteButton {
+  
+}

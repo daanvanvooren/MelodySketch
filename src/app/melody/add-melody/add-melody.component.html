@@ -1,0 +1,73 @@
+<br>
+<br>
+
+<div id="beginBanner" style="text-align:center">
+  <h1>
+    <div id="beginBannerText"><b>ADD MELODY</b></div>
+  </h1>
+</div>
+<br>
+
+<div style="text-align:center">
+</div>
+
+<div id="wrapper">
+  <app-piano-roll (notesOuput)="getNotes($event)"></app-piano-roll>
+
+  <div id="detailsContainer">
+    <form [formGroup]="melody" (ngSubmit)='onSubmit()'>
+      <div class="example-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Melody name</mat-label>
+          <input matInput placeholder="Melody name" matInput aria-label="name" placeholder="name" type="text"
+            formControlName="name">
+          <mat-error *ngIf="melody.get('name').errors && melody.get('name').touched">
+            {{ getErrorMessage(melody.get('name').errors) }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>BPM</mat-label>
+          <input matInput placeholder="BPM" id="bpmInput" matInput aria-label="bpm" placeholder="bpm" type="number"
+            formControlName="bpm" (change)="changeBPMOfPianoRoll()">
+          <mat-error *ngIf="melody.get('bpm').errors && melody.get('bpm').touched">
+            {{ getErrorMessage(melody.get('bpm').errors) }}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Description</mat-label>
+          <input matInput placeholder="Description" matInput aria-label="description" placeholder="description"
+            type="text" formControlName="description">
+          <mat-error *ngIf="melody.get('description').errors && melody.get('description').touched">
+            {{ getErrorMessage(melody.get('description').errors) }}
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]='!melody.valid'>Add</button>
+    </form>
+
+    <!-- Added Modal -->
+    <div class="modal fade" id="submittedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Melody added</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            You're melody has been added succesfully!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal"
+              [routerLink]="['/melody/list']">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<br>

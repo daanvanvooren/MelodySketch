@@ -1,0 +1,13 @@
+#fullScreen {
+    background: url(../../../assets/images/blurBackground.jpg);
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  #form {
+    margin: 20px;
+  }

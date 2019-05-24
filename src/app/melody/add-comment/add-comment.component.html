@@ -1,0 +1,24 @@
+<div class="card mx-auto" id="melodyContainer">
+  <div class="card-body">
+    <h5 class="card-title">
+      <div id="flexBox">
+        <div>
+          <form [formGroup]="addcomment" (ngSubmit)='onSubmit()'>
+            <div class="example-container">
+              <mat-form-field class="lol">
+                <mat-label>Add comment</mat-label>
+                <input matInput placeholder="Add comment" matInput aria-label="comment" placeholder="comment"
+                  type="text" formControlName="comment">
+                <mat-error *ngIf="addcomment.get('comment').errors && addcomment.get('comment').touched">
+                  {{ getErrorMessage(addcomment.get('comment').errors) }}
+                </mat-error>
+              </mat-form-field>
+            </div>
+            <button type="submit" class="btn btn-primary" [disabled]='!addcomment.valid'>Add</button>
+          </form>
+        </div>
+      </div>
+    </h5>
+  </div>
+</div>
+<br>

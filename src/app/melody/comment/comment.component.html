@@ -1,0 +1,15 @@
+<div class="card mx-auto" id="commentContainer">
+  <div class="card-header" style="background-color: white;">
+    <a href="">{{ comment.author.firstName }} {{ comment.author.name }}</a>
+    <small>
+      <span class="text-muted"> - {{ comment.created | date: 'longDate'}}</span>
+    </small>
+    <span *ngIf="isAuthor()">
+      <img id="delete" src="../../../assets/images/cross.svg" (click)="deleteComment()" />
+    </span>
+  </div>
+  <div class="card-body">
+    <p class="card-text">{{ comment.text }}</p>
+  </div>
+</div>
+<br>

@@ -1,0 +1,46 @@
+#beginBanner {
+  color: white;
+  background-image: url("../../../assets/images/bannerAddMelody.gif");
+  background-repeat: no-repeat;
+  background-position: 80% 50%;
+  background-size: cover;
+  padding-bottom: 18px;
+}
+
+#beginBannerText {
+  padding-top: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#detailsContainer {
+  /* margin-left: 250px; */
+  max-width: 500px;
+}
+
+.pianoRoll {
+  max-width: 550px;
+}
+
+#wrapper {
+  margin: 0px 5vw 0px 5vw;
+
+  /* width: 1000px;
+    margin: 0 auto; 
+    padding: 10px; */
+}
+
+example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container>* {
+  width: 100%;
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+  #wrapper {
+    margin-left: 16vw
+  }
+}

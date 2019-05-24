@@ -1,0 +1,59 @@
+<div class="card mx-auto" id="melodyContainer">
+  <div class="card-header" style="background-color: white;">
+    <span class="blueText">{{ melody.author.firstName }} {{ melody.author.name }}</span>
+    <small>
+      <span class="text-muted"> - {{ melody.dateCreated | date: 'longDate'}}</span>
+    </small>
+    <span *ngIf="isAuthor()">
+      <img id="delete" src="../../../assets/images/rubbish-bin.svg" (click)="deleteMelody()" [routerLink]="['/melody/list']"/>
+    </span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">
+      <div id="flexBox">
+        <img id="toggle" src="../../../assets/images/play-button.svg" (click)="toggleState()" class="toggleImage" />
+        <div>
+          {{ melody.name }} <a id="melodyName" [routerLink]="['/melody/', melody.id]"><small style="color: gray">(see more)</small></a>
+          <small>
+            <div class="text-muted">{{ melody.bpm }} BPM</div>
+          </small>
+        </div>
+      </div>
+    </h5>
+
+    <div>
+      <!-- width="500" height="110" -->
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" class="piano" viewBox="0 0 500 110"
+        style="margin-left: -5px;">
+        <rect id='0' x="5" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='2' x="30" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='4' x="55" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='5' x="80" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='7' x="105" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='9' x="130" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='11' x="155" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='12' x="180" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='14' x="205" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='16' x="230" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='17' x="255" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='19' x="280" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='21' x="305" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+        <rect id='23' x="330" y="5" width="25" height="100" fill="#f7f7f7" stroke="black" stroke-width="2px" />
+
+        <rect id='1' x="25" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='3' x="50" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='6' x="100" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='8' x="125" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='10' x="150" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='13' x="200" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='15' x="225" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='18' x="275" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='20' x="300" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+        <rect id='22' x="325" y="5" width="10" height="60" fill="black" stroke="black" stroke-width="2px" />
+      </svg>
+    </div>
+
+    <p class="card-text">{{ melody.description }}</p>
+  </div>
+</div>
+<br>

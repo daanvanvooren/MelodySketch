@@ -1,0 +1,23 @@
+<br>
+<br>
+
+<div id="beginBanner" style="text-align:center">
+  <h1>
+    <div id="beginBannerText"><b>MELODICAL IDEAS</b></div>
+  </h1>
+</div>
+
+<br>
+<br>
+
+<!-- <div *ngIf=melodies> -->
+<div *ngIf="melodies else loading">
+  <div *ngFor="let localMelody of melodies" id="melodiesContainer">
+    <app-melody [melody]="localMelody"></app-melody>
+  </div>
+</div>
+<ng-template #loading>
+  <div style="display: flex; justify-content: center; align-items: center;">
+      <mat-spinner [diameter]="70"></mat-spinner>
+  </div>
+</ng-template>

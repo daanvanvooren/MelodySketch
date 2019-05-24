@@ -1,0 +1,78 @@
+<br>
+<br>
+
+<div id="beginBanner" style="text-align:center">
+  <h1>
+    <div id="beginBannerText">
+      <b>WELCOME!
+      </b>
+    </div>
+  </h1>
+</div>
+<br>
+
+
+<div class="card mx-auto cardContainer">
+  <h5 class="card-header">Your info</h5>
+  <div class="card-body">
+    <div *ngIf="(user$ | async) as user; else loading">
+
+      <table id="vertical-1">
+        <tr>
+          <th>E-mail</th>
+          <td>&nbsp;&nbsp;{{ user.username }}</td>
+        </tr>
+        <tr>
+          <th>First name</th>
+          <td>&nbsp;&nbsp;{{ user.firstName }}</td>
+        </tr>
+        <tr>
+          <th>Last name</th>
+          <td>&nbsp;&nbsp;{{ user.name }}</td>
+        </tr>
+      </table>
+
+
+
+
+    </div>
+    <ng-template #loading>
+      <mat-spinner [diameter]="50"></mat-spinner>
+    </ng-template>
+  </div>
+</div>
+
+
+<br>
+
+<div class="card mx-auto cardContainer">
+  <h5 class="card-header">Your melodies</h5>
+  <div class="card-body">
+    <div id="tableContainer" *ngIf="melodies else loading2">
+      <table class="table table-condensed" id="melodyTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>BPM</th>
+            <th>Description</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <tr *ngFor="let localMelody of melodies" id="melodiesContainer">
+            <td>{{localMelody.name}}</td>
+            <td>{{localMelody.bpm}}</td>
+            <td>{{localMelody.description}}</td>
+            <td><button id="deleteButton" (click)="deleteMelody(localMelody.id)"><i class="fa fa-remove"></i></button>
+            </td>
+          </tr>
+
+        </tbody>
+      </table>
+    </div>
+    <ng-template #loading2>
+      <mat-spinner [diameter]="50"></mat-spinner>
+    </ng-template>
+  </div>
+</div>

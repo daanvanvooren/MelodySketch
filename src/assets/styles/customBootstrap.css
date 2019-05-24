@@ -1,0 +1,52 @@
+/* Button */
+.btn-primary {
+  color: #fff;
+  background-color: #2bbbadd2;
+  border-color: #2bbbadd2;
+  /* #0fa88d */
+}
+
+/* Button */
+.btn-primary:hover {
+  color: #fff;
+  background-color: #0fa88cb4;
+  border-color: #0fa88cb4;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active {
+  color: #fff;
+  background-color: #0fa88cb4;
+  border-color: #0fa88cb4;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.btn-primary:disabled {
+  color: #fff;
+  background-color: #b4b4b4;
+  border-color: #b4b4b4;
+}
+
+/* Navbar */
+.bg-dark {
+  background-color: #24292e !important;
+}
+
+
+/* Material */
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+  background-color: #0fa88cb4;
+}
+
+/* Spinner */
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #e2e2e2b4;
+}

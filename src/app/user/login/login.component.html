@@ -1,0 +1,38 @@
+<div id="fullScreen">
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div fxLayout="row" fxLayoutAlign="center center" class="login-main">
+    <mat-card >
+      <form id="form" [formGroup]="user" (ngSubmit)="onSubmit()">
+        <mat-card-header>
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+
+        <mat-card-content fxLayout="column">
+          <mat-form-field>
+            <input matInput placeholder="E-mail" aria-label="email" data-cy="login-email" formControlName="username" />
+          </mat-form-field>
+
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" aria-label="password" data-cy="login-password"
+              formControlName="password" />
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions fxLayout="row" fxLayoutAlign="space-between center">
+          <a [routerLink]="['/register']">&nbsp;&nbsp;Register</a>
+
+          <button mat-raised-button type="submit" color="primary" data-cy="login-button">
+            Login
+          </button>
+
+        </mat-card-actions>
+      <div class="text-danger"><small>{{ errorMsgTxt }}</small></div>
+
+      </form>
+    </mat-card>
+  </div>
+</div>

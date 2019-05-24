@@ -1,0 +1,61 @@
+#grid {
+  max-width: 1024px;
+}
+
+#timeline {
+  max-width: 1024px;
+  margin-bottom: 9px;
+}
+
+/* Midi Upload */
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  cursor: pointer;
+  /* "hand" cursor */
+}
+
+#fileLabel {
+  min-width: 180px;
+}
+
+/* Controls */
+.pianoRollControls {
+  max-width: 1024px;
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  text-align: center;
+}
+
+.pianoRollButtons {
+  background-color: #D7D8E1;
+  border: 1px solid grey;
+  color: black;
+  padding: 3px 7px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  outline: 0;
+  font-weight: 400;
+  margin-right: 3px;
+}
+
+.pianoRollButtons:hover {
+  background-color: #c2c2d3;
+}
+
+.pianoRollButtons:active {
+  background-color: #9d9dad;
+}
+
+#toggle {
+  min-width: 30px;
+}

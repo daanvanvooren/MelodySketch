@@ -1,0 +1,19 @@
+<br>
+<br>
+<br>
+<br>
+
+<app-melody [melody]="melody"></app-melody>
+
+<app-add-comment [melody]="melody"></app-add-comment>
+
+<div *ngIf="comments else loading">
+  <div *ngFor="let localComment of comments">
+    <app-comment [comment]="localComment"></app-comment>
+  </div>
+</div>
+<ng-template #loading>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <mat-spinner [diameter]="70"></mat-spinner>
+  </div>
+</ng-template>
