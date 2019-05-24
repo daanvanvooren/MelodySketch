@@ -53,7 +53,7 @@ export class AuthenticationService {
   login(email: string, password: string): Observable<boolean> {
     return this.http
       .post(
-        `melodysketchapi.azurewebsites.net/api/account`,
+        `https://melodysketchapi.azurewebsites.net/api/account`,
         { email, password },
         { responseType: 'text' }
       )
@@ -85,7 +85,7 @@ export class AuthenticationService {
   ): Observable<boolean> {
     return this.http
       .post(
-        `melodysketchapi.azurewebsites.net/api/account/register`,
+        `https://melodysketchapi.azurewebsites.net/api/account/register`,
         {
           firstname,
           lastname,
@@ -110,7 +110,7 @@ export class AuthenticationService {
 
   checkUserNameAvailability = (email: string): Observable<boolean> => {
     return this.http.get<boolean>(
-      `melodysketchapi.azurewebsites.net/api/account/checkusername`,
+      `https://melodysketchapi.azurewebsites.net/api/account/checkusername`,
       {
         params: { email }
       }

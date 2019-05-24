@@ -20,7 +20,7 @@ export class MelodySketchDataService {
 
   //Get calls
   get melodies$(): Observable<Melody[]> {
-    return this.http.get(`melodysketchapi.azurewebsites.net/api/melodies/`).pipe(
+    return this.http.get(`https://melodysketchapi.azurewebsites.net/api/melodies/`).pipe(
       map(
         (list: any[]): Melody[] => list.map(Melody.fromJSON)
       )
@@ -28,7 +28,7 @@ export class MelodySketchDataService {
   }
 
   get mymelodies$(): Observable<Melody[]> {
-    return this.http.get(`melodysketchapi.azurewebsites.net/api/melodies/mymelodies/`).pipe(
+    return this.http.get(`https://melodysketchapi.azurewebsites.net/api/melodies/mymelodies/`).pipe(
       map(
         (list: any[]): Melody[] => list.map(Melody.fromJSON)
       )
@@ -36,7 +36,7 @@ export class MelodySketchDataService {
   }
 
   getMelody$(id): Observable<Melody> {
-    return this.http.get(`melodysketchapi.azurewebsites.net/api/melodies/${id}`).pipe(
+    return this.http.get(`https://melodysketchapi.azurewebsites.net/api/melodies/${id}`).pipe(
       map(
         (mel: any): Melody => Melody.fromJSON(mel)
       )
@@ -48,7 +48,7 @@ export class MelodySketchDataService {
   }
 
   getcomments$(melodyId): Observable<Comment[]> {
-    return this.http.get(`melodysketchapi.azurewebsites.net/api/comments/${melodyId}`).pipe(
+    return this.http.get(`https://melodysketchapi.azurewebsites.net/api/comments/${melodyId}`).pipe(
       map(
         (list: any[]): Comment[] => list.map(Comment.fromJSON)
       )
@@ -56,7 +56,7 @@ export class MelodySketchDataService {
   }
 
   getUser$(username): Observable<User> {
-    return this.http.get(`melodysketchapi.azurewebsites.net/api/users/${username}`).pipe(
+    return this.http.get(`https://melodysketchapi.azurewebsites.net/api/users/${username}`).pipe(
       map(
         (user: any): User => User.fromJSON(user)
       )
@@ -65,12 +65,12 @@ export class MelodySketchDataService {
 
   //Post calls
   addNewMelody(melody: Melody) {
-    return this.http.post(`melodysketchapi.azurewebsites.net/api/melodies/`,
+    return this.http.post(`https://melodysketchapi.azurewebsites.net/api/melodies/`,
       melody.toJSON());
   }
 
   deteleMelody(id: Number): Observable<{}> {
-    return this.http.delete(`melodysketchapi.azurewebsites.net/api/melodies/${id}`)
+    return this.http.delete(`https://melodysketchapi.azurewebsites.net/api/melodies/${id}`)
       .pipe(
         tap(() => {
           this._refreshNeeded$.next();
@@ -79,7 +79,7 @@ export class MelodySketchDataService {
   }
 
   addNewComment(comment: Comment) {
-    return this.http.post(`melodysketchapi.azurewebsites.net/api/comments/`,
+    return this.http.post(`https://melodysketchapi.azurewebsites.net/api/comments/`,
       comment.toJSON())
       .pipe(
         tap(() => {
@@ -89,7 +89,7 @@ export class MelodySketchDataService {
   }
 
   deteleComment(id: Number): Observable<{}> {
-    return this.http.delete(`melodysketchapi.azurewebsites.net/api/comments/${id}`)
+    return this.http.delete(`https://melodysketchapi.azurewebsites.net/api/comments/${id}`)
       .pipe(
         tap(() => {
           this._refreshNeeded$.next();
